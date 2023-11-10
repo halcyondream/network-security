@@ -1,0 +1,1098 @@
+{
+  "v": 1,
+  "id": "c7573560-2614-4ada-8a6e-265d24fd0d2f",
+  "rev": 1,
+  "name": "Docker backup",
+  "summary": "Docker backup",
+  "description": "",
+  "vendor": "halcyondream",
+  "url": "",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "0b5aea1d-24b6-42aa-93a8-47219d335221",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": "This is a list of all sources that sent in messages to Graylog."
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "a1647eb6-a064-4fe6-b459-1e4267d3f659",
+              "timerange": {
+                "range": 300,
+                "type": "relative"
+              },
+              "filters": [],
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": null,
+                  "name": "chart",
+                  "timerange": {
+                    "range": 300,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "Message count",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "source"
+                      ],
+                      "limit": 10
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "a964f1c5-e108-4b5e-a907-ffe0b0f0683c",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                },
+                {
+                  "query": null,
+                  "name": "chart",
+                  "timerange": {
+                    "range": 300,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "Message count",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "interval": {
+                        "type": "auto",
+                        "scaling": 1
+                      }
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "481de18f-938e-40d5-8ab2-6eaf6a28f091",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": []
+                },
+                {
+                  "query": null,
+                  "name": "chart",
+                  "timerange": {
+                    "range": 300,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "Message count",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "source"
+                      ],
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "011b2894-49e5-44d8-aab6-8c4d4457a886",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "requires": {},
+          "owner": "admin",
+          "created_at": "2019-11-22T10:58:47.255Z"
+        },
+        "created_at": "2019-11-22T10:54:50.950Z",
+        "requires": {},
+        "state": {
+          "a1647eb6-a064-4fe6-b459-1e4267d3f659": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "tab": {
+                "title": "Sources Overview"
+              },
+              "widget": {
+                "6c127c5d-be75-4157-b43f-ac0194ac0586": "Selected sources",
+                "92d63811-e4dd-47db-bd3b-db03c8a9bd53": "Messages per Source",
+                "00637e63-d728-4b3e-932b-7c8696b4855d": "Messages over time"
+              }
+            },
+            "widgets": [
+              {
+                "id": "00637e63-d728-4b3e-932b-7c8696b4855d",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "range": 300,
+                  "type": "relative"
+                },
+                "query": null,
+                "streams": [],
+                "config": {
+                  "visualization": "line",
+                  "column_limit": null,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "auto",
+                          "scaling": 1
+                        }
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "Message count"
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "92d63811-e4dd-47db-bd3b-db03c8a9bd53",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "range": 300,
+                  "type": "relative"
+                },
+                "query": null,
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": null,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "source"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "Message count"
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "6c127c5d-be75-4157-b43f-ac0194ac0586",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "range": 300,
+                  "type": "relative"
+                },
+                "query": null,
+                "streams": [],
+                "config": {
+                  "visualization": "table",
+                  "column_limit": null,
+                  "event_annotation": false,
+                  "row_limit": 15,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "source"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "Message count"
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "series",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              }
+            ],
+            "widget_mapping": {
+              "6c127c5d-be75-4157-b43f-ac0194ac0586": [
+                "011b2894-49e5-44d8-aab6-8c4d4457a886"
+              ],
+              "92d63811-e4dd-47db-bd3b-db03c8a9bd53": [
+                "a964f1c5-e108-4b5e-a907-ffe0b0f0683c"
+              ],
+              "00637e63-d728-4b3e-932b-7c8696b4855d": [
+                "481de18f-938e-40d5-8ab2-6eaf6a28f091"
+              ]
+            },
+            "positions": {
+              "6c127c5d-be75-4157-b43f-ac0194ac0586": {
+                "col": 1,
+                "row": 5,
+                "height": 4,
+                "width": 6
+              },
+              "92d63811-e4dd-47db-bd3b-db03c8a9bd53": {
+                "col": 7,
+                "row": 5,
+                "height": 4,
+                "width": 6
+              },
+              "00637e63-d728-4b3e-932b-7c8696b4855d": {
+                "col": 1,
+                "row": 1,
+                "height": 4,
+                "width": "Infinity"
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "owner": "admin",
+        "title": {
+          "@type": "string",
+          "@value": "Sources"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": "This is a list of all sources that sent in messages to Graylog. You can narrow the timerange by zooming in on the message histogram, or you can increase the time range by specifying a broader one in the controls at the top. You can also specify filters to limit the results you are seeing. You can also add additional widgets to this dashboard, or adapt the appearance of existing widgets to suit your needs."
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "595829a5-d346-4b3d-a425-3ec9bafc7017",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Extract nftables fields"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Extract all key-value pairs from nftables logs via ulogd (not syslogd)."
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"Extract nftables fields\"\nwhen\n  has_field(\"message\") and\n  contains(to_string($message.application_name), \"ulogd\", true) and\n  contains(to_string($message.facility), \"local5\", true)\nthen\n  set_fields(\n    fields:\n      key_value(\n        value: to_string($message.message),\n        trim_value_chars: \"\",\n        trim_key_chars: \"\",\n        delimiters: \" \",\n        kv_delimiters: \"=\"\n      )\n  );\n  rename_field(\"SRC\", \"src_addr\");\n  rename_field(\"DST\", \"dst_addr\");\n  rename_field(\"DPT\", \"dst_port\");\n  rename_field(\"SPT\", \"src_port\");\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "ecbe9bad-15ab-45bd-bb8c-8aa8fecb3f0d",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": "Stats on TCP or UDP connections (source + port) for the given target."
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "5f0b2cbc-9641-461b-a958-2763920d6ec4",
+              "timerange": {
+                "from": 300,
+                "type": "relative"
+              },
+              "filters": [],
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "_exists_:dst_port AND NOT dst_port:0"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "from": 604800,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "dst_port"
+                      ],
+                      "limit": 15
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "dcdde133-f6a9-4423-86bf-fb2c98ac7c1e",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": []
+                }
+              ]
+            },
+            {
+              "id": "5ade2d29-4fa3-45f6-86c0-2327794e69d8",
+              "timerange": {
+                "from": 300,
+                "type": "relative"
+              },
+              "filters": [],
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "dst_addr:0.0.0.0"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "from": 259200,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "Count of all messages",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "interval": {
+                        "type": "timeunit",
+                        "timeunit": "30m"
+                      }
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "31fe886f-3755-47c2-8ac9-2e2da9a6ec6a",
+                  "filters": [],
+                  "column_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "src_addr"
+                      ],
+                      "limit": 15
+                    }
+                  ],
+                  "sort": []
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "requires": {},
+          "owner": "admin",
+          "created_at": "2023-11-09T14:22:29.333Z"
+        },
+        "created_at": "2023-11-08T02:27:57.169Z",
+        "requires": {},
+        "state": {
+          "5f0b2cbc-9641-461b-a958-2763920d6ec4": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "widget": {
+                "0738102e-4bdd-4253-b110-a6f4b7e0752f": "Count of TCP/UDP ports accessed in the last week"
+              }
+            },
+            "widgets": [
+              {
+                "id": "0738102e-4bdd-4253-b110-a6f4b7e0752f",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "from": 604800,
+                  "type": "relative"
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "_exists_:dst_port AND NOT dst_port:0"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": null,
+                  "event_annotation": false,
+                  "row_limit": 15,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "dst_port"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": false,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              }
+            ],
+            "widget_mapping": {
+              "0738102e-4bdd-4253-b110-a6f4b7e0752f": [
+                "dcdde133-f6a9-4423-86bf-fb2c98ac7c1e"
+              ]
+            },
+            "positions": {
+              "0738102e-4bdd-4253-b110-a6f4b7e0752f": {
+                "col": 1,
+                "row": 12,
+                "height": 4,
+                "width": "Infinity"
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          },
+          "5ade2d29-4fa3-45f6-86c0-2327794e69d8": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "widget": {
+                "c2862d42-456b-4edf-9d5a-1f717bfc4422": "Message count by IP address in the last three days"
+              }
+            },
+            "widgets": [
+              {
+                "id": "c2862d42-456b-4edf-9d5a-1f717bfc4422",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "from": 259200,
+                  "type": "relative"
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "dst_addr:"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "line",
+                  "column_limit": 15,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "timeunit",
+                          "value": 30,
+                          "unit": "minutes"
+                        }
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": "Count of all messages"
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [
+                    {
+                      "fields": [
+                        "src_addr"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 15
+                      }
+                    }
+                  ],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              }
+            ],
+            "widget_mapping": {
+              "c2862d42-456b-4edf-9d5a-1f717bfc4422": [
+                "31fe886f-3755-47c2-8ac9-2e2da9a6ec6a"
+              ]
+            },
+            "positions": {
+              "c2862d42-456b-4edf-9d5a-1f717bfc4422": {
+                "col": 1,
+                "row": 35,
+                "height": 4,
+                "width": "Infinity"
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "owner": "admin",
+        "title": {
+          "@type": "string",
+          "@value": "Transport-layer statistics"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": "Use this filter:\n\nNOT dst_port:0 AND _exists_:dst_port AND dst_addr:0.0.0.0"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "6b5097bc-a2c6-4012-a327-668adec34a9f",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Remove IPs from non-IP messages"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Remove IP-layer info from messages above the IP layer"
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"Remove IPs from non-IP messages\"\nwhen \n  $message.src_addr==0 && $message.dst_addr==0\nthen\n  remove_field(\"src_addr\", $message);\n  remove_field(\"dst_addr\", $message);\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "345d1c45-770d-401c-ae7b-e628906fd9dc",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Extract Snort3 alert fields"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Extract relevant fields from Snort3 IDS/IPS logs."
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"Extract Snort3 alert fields\"\nwhen\n  has_field(\"message\")\nthen\n  let m = regex(\"^\\\\s?\\\\[(\\\\d+):(\\\\d+):(\\\\d+)\\\\] (.+?) \\\\[Classification: (.+?)\\\\] \\\\[Priority: (\\\\d+)] \\\\{(.+?)\\\\} ((?:\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})|(?:(?:[0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,7}:|(?:[0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,5}(?::[0-9a-fA-F]{1,4}){1,2}|(?:[0-9a-fA-F]{1,4}:){1,4}(?::[0-9a-fA-F]{1,4}){1,3}|(?:[0-9a-fA-F]{1,4}:){1,3}(?::[0-9a-fA-F]{1,4}){1,4}|(?:[0-9a-fA-F]{1,4}:){1,2}(?::[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:(?:(?::[0-9a-fA-F]{1,4}){1,6})|:(?:(?::[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(?::[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(?:ffff(?::0{1,4}){0,1}:){0,1}(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\\\.){3,3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])|(?:[0-9a-fA-F]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\\\.){3,3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])))(:(\\\\d{1,5}))? -> ((?:\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})|(?:(?:[0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,7}:|(?:[0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,5}(?::[0-9a-fA-F]{1,4}){1,2}|(?:[0-9a-fA-F]{1,4}:){1,4}(?::[0-9a-fA-F]{1,4}){1,3}|(?:[0-9a-fA-F]{1,4}:){1,3}(?::[0-9a-fA-F]{1,4}){1,4}|(?:[0-9a-fA-F]{1,4}:){1,2}(?::[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:(?:(?::[0-9a-fA-F]{1,4}){1,6})|:(?:(?::[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(?::[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(?:ffff(?::0{1,4}){0,1}:){0,1}(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\\\.){3,3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])|(?:[0-9a-fA-F]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\\\.){3,3}(?:25[0-5]|(?:2[0-4]|1{0,1}[0-9]){0,1}[0-9])))(:(\\\\d{1,5}))?\\\\R?\", to_string($message.message));\n\n  set_field(\"generator_id\", m[\"0\"]);\n  set_field(\"signature_id\", m[\"1\"]);\n  set_field(\"signature_revision_id\", m[\"2\"]);\n\n  set_field(\"description\", m[\"3\"]);\n  set_field(\"classification\", m[\"4\"]);\n  set_field(\"priority\", to_long(m[\"5\"]));\n  set_field(\"protocol\", m[\"6\"]);\n\n  set_field(\"src_addr\", m[\"7\"]);\n  set_field(\"src_port\", to_long(m[\"9\"]));\n\n  set_field(\"dst_addr\", m[\"10\"]);\n  set_field(\"dst_port\", to_long(m[\"12\"]));\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline_rule",
+        "version": "1"
+      },
+      "id": "6a960ecc-0ca7-4857-a04a-38755c80670e",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Remove ports from non-transport-layer packets."
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Remove TLS-layer info from messages above the TLS layer."
+        },
+        "source": {
+          "@type": "string",
+          "@value": "rule \"Remove ports from non-transport-layer packets.\"\nwhen\n  $message.src_port==0 && $message.dst_port==0\nthen\n  remove_field(\"src_port\", $message);\n  remove_field(\"dst_port\", $message);\nend"
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "911262ff-8a2d-4593-9e6c-f36ea8f435f2",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": "Probably the firewall or asset IP."
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "9fa86510-3f95-4a87-ab17-586976740be4",
+              "timerange": {
+                "from": 300,
+                "type": "relative"
+              },
+              "filters": [],
+              "query": {
+                "type": "elasticsearch",
+                "query_string": ""
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "'0.0.0.0'"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "range": 0,
+                    "type": "relative"
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "interval": {
+                        "type": "timeunit",
+                        "timeunit": "1m"
+                      }
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "ba7ff66b-3755-4048-831e-85a7e634ab20",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": []
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "requires": {},
+          "owner": "admin",
+          "created_at": "2023-11-04T18:40:36.513Z"
+        },
+        "created_at": "2023-11-04T18:28:36.838Z",
+        "requires": {},
+        "state": {
+          "9fa86510-3f95-4a87-ab17-586976740be4": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {},
+            "widgets": [
+              {
+                "id": "d8bd7d60-b258-4aee-84ed-763f7251ecfa",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "range": 0,
+                  "type": "relative"
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "'0.0.0.0'"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "line",
+                  "column_limit": null,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "timeunit",
+                          "value": 1,
+                          "unit": "minutes"
+                        }
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": false,
+                  "column_pivots": [],
+                  "visualization_config": {
+                    "interpolation": "linear"
+                  },
+                  "formatting_settings": {
+                    "chart_colors": [
+                      {
+                        "field_name": "count()",
+                        "chart_color": "#b71c1c"
+                      }
+                    ]
+                  },
+                  "sort": []
+                }
+              }
+            ],
+            "widget_mapping": {
+              "d8bd7d60-b258-4aee-84ed-763f7251ecfa": [
+                "ba7ff66b-3755-4048-831e-85a7e634ab20"
+              ]
+            },
+            "positions": {
+              "d8bd7d60-b258-4aee-84ed-763f7251ecfa": {
+                "col": 1,
+                "row": 9,
+                "height": 4,
+                "width": 4
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "owner": "admin",
+        "title": {
+          "@type": "string",
+          "@value": "Target/Victim"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": ""
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "37b4f16b-c309-4365-88f4-c64a79437c93",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Syslog (rsyslog)"
+        },
+        "configuration": {
+          "port": {
+            "@type": "integer",
+            "@value": 1514
+          },
+          "recv_buffer_size": {
+            "@type": "integer",
+            "@value": 262144
+          },
+          "force_rdns": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "allow_override_date": {
+            "@type": "boolean",
+            "@value": true
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "expand_structured_data": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "store_full_message": {
+            "@type": "boolean",
+            "@value": false
+          },
+          "charset_name": {
+            "@type": "string",
+            "@value": "UTF-8"
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 2
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.syslog.udp.SyslogUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": false
+        },
+        "extractors": []
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "pipeline",
+        "version": "1"
+      },
+      "id": "5e3c8bb1-7448-465b-9209-4f926f6cf6ac",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "Extract netsec logs"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "IDS/IPS (Snort3 or Suricata), Firewall (nftables)"
+        },
+        "source": {
+          "@type": "string",
+          "@value": "pipeline \"Extract netsec logs\"\nstage 0 match either\nrule \"Extract Snort3 alert fields\"\nrule \"Extract nftables fields\"\nstage 1 match either\nrule \"Remove IPs from non-IP messages\"\nrule \"Remove ports from non-transport-layer packets.\"\nend"
+        },
+        "connected_streams": [
+          {
+            "@type": "string",
+            "@value": "000000000000000000000001"
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=5.0.13+083613e"
+        }
+      ]
+    }
+  ]
+}
