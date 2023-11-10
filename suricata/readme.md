@@ -16,7 +16,13 @@ _/etc/suricata/rules_. Make the following changes:
   WAN)
 
 Put custom rules in the */etc/suricata/rules* folder, with the `.rules`
-suffix.
+suffix. A simple example in _/etc/suricata/rules/custom.rules_:
+
+    alert ip $HOST_NET [!9000] -> any [!80,!443,!9000] (msg:"Local machine trying to access a non-HTTP/S port.";sid:112233445;)
+
+could help identify suspicious traffic on a LAN where hosts are
+expected to access only HTTP/S traffic. (Graylog's default webserver
+is on port 9000 and is optional if you're not using that port.)
 
 To restart the whole process and update rules:
 
