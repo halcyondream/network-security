@@ -6,9 +6,10 @@ Install:
 
     apt install suricata
 
-Uncomment the correct lines in the stock YAML file, notably:
+On Debian systems, the configuration files are in _/etc/suricata_ and
+_/etc/suricata/rules_. Make the following changes:
 
-- The syslog section for alerts (and optionally process info in the EVE
+- Uncomment syslog section for alerts (and optionally process info in
   module)
 
 - Set the network interface to whatever is facing the LAN (*not* the 
