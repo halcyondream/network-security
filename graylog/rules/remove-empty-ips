@@ -1,0 +1,7 @@
+rule "Remove IPs from non-IP messages"
+when 
+  $message.src_addr==0 && $message.dst_addr==0
+then
+  remove_field("src_addr", $message);
+  remove_field("dst_addr", $message);
+end
