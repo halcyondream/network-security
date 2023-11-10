@@ -9,3 +9,4 @@ Requirements:
 - dnsmasq
 - iptables
 - tshark (optional)
+- nohup (optional)
