@@ -9,6 +9,7 @@ save traffic to a PCAP file for packet inspection later.
 
 Requirements:
 
+- Two physical network interfaces
 - dnsmasq
 - iptables
 - tshark (optional)
