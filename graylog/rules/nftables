@@ -1,0 +1,21 @@
+rule "Extract nftables fields"
+when
+  has_field("message") and
+  contains(to_string($message.application_name), "ulogd", true) and
+  contains(to_string($message.facility), "local5", true)
+then
+  set_fields(
+    fields:
+      key_value(
+        value: to_string($message.message),
+        trim_value_chars: "",
+        trim_key_chars: "",
+        delimiters: " ",
+        kv_delimiters: "="
+      )
+  );
+  rename_field("DPT", "dst_port");
+  rename_field("SPT", "src_port");
+  rename_field("SRC", "src_addr");
+  rename_field("DST", "dst_addr");
+end
