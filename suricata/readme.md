@@ -4,7 +4,7 @@ Notes for setting up a simple Suricata instance.
 
 Install:
 
-  apt install suricata
+    apt install suricata
 
 Uncomment the correct lines in the stock YAML file, notably:
 
@@ -19,6 +19,6 @@ suffix.
 
 To restart the whole process and update rules:
 
-  systemctl restart suricata
+    systemctl restart suricata
 
 Use the same port rule and *rsyslog.d* config from the Snort section.
